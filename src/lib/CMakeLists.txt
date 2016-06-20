@@ -11,6 +11,7 @@ find_package(BZip2)
 find_package(OpenSSL)
 
 include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${MJ_INCLUDE_DIRS}
     ${BZIP2_INCLUDE_DIRS}
@@ -93,5 +94,5 @@ add_library(${pname} ${LIBRARY_BUILD_TYPE}
 
 add_dependencies(${pname} mj)
 
-set(NETPGP_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR} PARENT_SCOPE)
+set(NETPGP_INCLUDE_DIRS "${CMAKE_CURRENT_BINARY_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" PARENT_SCOPE)
 

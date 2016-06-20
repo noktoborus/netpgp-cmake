@@ -7,6 +7,8 @@ project(${pname} C)
 find_package(BZip2)
 find_package(OpenSSL)
 
+include_directories(${NETPGP_INCLUDE_DIRS})
+
 add_executable(${pname} netpgp.c)
 
 target_link_libraries(${pname}
