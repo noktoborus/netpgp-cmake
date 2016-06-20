@@ -12,5 +12,9 @@ endif ()
 add_subdirectory(src/libmj)
 add_subdirectory(src/lib)
 
-add_subdirectory(src/netpgp)
+option(BUILD_NETPGP "build netpgp tool" ON)
+
+if (BUILD_NETPGP)
+    add_subdirectory(src/netpgp)
+endif ()
 
