@@ -13,8 +13,12 @@ add_subdirectory(src/libmj)
 add_subdirectory(src/lib)
 
 option(BUILD_NETPGP "build netpgp tool" ON)
-
 if (BUILD_NETPGP)
     add_subdirectory(src/netpgp)
+endif ()
+
+option(BUILD_NETPGPKEYS "build netpgpkeys tool" ON)
+if (BUILD_NETPGPKEYS)
+    add_subdirectory(src/netpgpkeys)
 endif ()
 
