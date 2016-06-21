@@ -20,3 +20,6 @@ target_link_libraries(${pname}
 
 set_target_properties(${pname} PROPERTIES OUTPUT_NAME "netpgp")
 
+install(TARGETS ${pname}
+    RUNTIME DESTINATION bin)
+

@@ -90,9 +90,18 @@ add_library(${pname} ${LIBRARY_BUILD_TYPE}
     crypto.c
     compress.c
     writer.c
+
+    netpgp.h
     )
 
 add_dependencies(${pname} mj)
 
 set(NETPGP_INCLUDE_DIRS "${CMAKE_CURRENT_BINARY_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" PARENT_SCOPE)
+
+set_target_properties(${pname} PROPERTIES PUBLIC_HEADER netpgp.h)
+
+install(TARGETS ${pname}
+    LIBRARY DESTINATION lib
+    PUBLIC_HEADER DESTINATION include
+    )
 

@@ -22,3 +22,6 @@ target_link_libraries(${pname}
     ${OPENSSL_CRYPTO_LIBRARY}
     ${BZIP2_LIBRARIES})
 
+install(TARGETS ${pname}
+    RUNTIME DESTINATION bin)
+

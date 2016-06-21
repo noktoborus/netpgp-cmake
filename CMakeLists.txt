@@ -12,13 +12,15 @@ endif ()
 add_subdirectory(src/libmj)
 add_subdirectory(src/lib)
 
-option(BUILD_NETPGP "build netpgp tool" ON)
-if (BUILD_NETPGP)
+option(BUILD_CLI "build command line interface" ON)
+
+option(BUILD_NETPGP "build netpgp tool" ${BUILD_CLI})
+if (BUILD_CLI AND BUILD_NETPGP)
     add_subdirectory(src/netpgp)
 endif ()
 
-option(BUILD_NETPGPKEYS "build netpgpkeys tool" ON)
-if (BUILD_NETPGPKEYS)
+option(BUILD_NETPGPKEYS "build netpgpkeys tool" ${BUILD_CLI})
+if (BUILD_CLI AND BUILD_NETPGPKEYS)
     add_subdirectory(src/netpgpkeys)
 endif ()
 
